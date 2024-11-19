@@ -52,7 +52,7 @@ function App() {
   const typeClass = "w-[80px] h-[400px]"
 
   return (
-    <div className="w-full pt-[40px] px-[60px]">
+    <div className="w-full pt-[40px] px-[60px] py-[100px]">
       <div id='page1'>
         <div className='flex text-center w-full justify-center align-middle items-center h-[60px]'>
             <img src={lucasname} alt='Lucas' className='w-[120px] h-[40px] mr-3' />
@@ -316,6 +316,60 @@ function App() {
               <img src={upgradeDisplay} alt='basicupgradeDisplayDisplay' className='w-[900px] h-[300px]' />
               </div>
             </div>
+          </div>
+
+          <div>
+            <p className='text-xl mt-[80px]'>기 타 사 항</p>
+            <div className='mt-[40px]'>
+              <p>테 이 블 수 량 : </p>
+              <div className='flex'>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[60px] h-[30px]' />
+                <p>인용 테이블</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>mm</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>mm</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>개</p>
+              </div>
+              <div className='flex'>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[60px] h-[30px]' />
+                <p>인용 테이블</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>mm</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>mm</p>
+                <input type='text' className='border mx-4 border-black text-center rounded-md w-[40px] h-[30px]' />
+                <p>개</p>
+              </div>
+            </div>
+            <div className='mt-[40px]'>
+              <p>결 제 방 법 선 택</p>
+              <div className='flex align-middle mt-[40px]'>
+                <p className='mr-5'>일 시 불 ( 현 금 / 카 드 )</p>
+                <label htmlFor='cash'>현금</label>
+                <input id='cash' type='checkbox' className='w-5 h-5 mx-5'/>
+                <label htmlFor='card'>카드</label>
+                <input id='card' type='checkbox' className='w-5 h-5 mx-5'/>
+              </div>
+              <div>
+                <label htmlFor='month'>렌 탈 계 약 ( 12 / 24 / 36개월 선택)</label>
+                <input id='month' type='text' className='border border-black text-center rounded-md w-[60px] h-[30px] mx-5'/>
+              </div>
+              <div>
+                <label htmlFor='subthing'>콘센트, 보조배터리, 렌지 및 로스타 사용 여부(모델명 포함)</label>
+                <input id='subthing' type='text' className='border border-black text-center rounded-md w-[400px] h-[30px] mx-5'/>
+              </div>
+              <div className='flex align-middle'>
+                <label htmlFor='etc'>기 타 사 항</label>
+                <textarea id='etc' type='text' className='border border-black text-center rounded-md w-[400px] h-[60px] mx-5'/>
+              </div>
+              <div>
+                <label htmlFor='buyer'>직위 및 성명</label>
+                <input id='buyer' type='text' className='border border-black text-center rounded-md w-[400px] h-[30px] mx-5'/>
+              </div>
+            </div>
+            <button className='mt-[60px] py-5 px-7 border border-black text-2xl rounded-xl'>제출</button>
           </div>
         </div>
       </div>
