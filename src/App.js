@@ -46,6 +46,22 @@ function App() {
   const [topType, setTopType] = useState("");
   const [topThickness, setTopThickness] = useState("");
   const [spoonType, setSpoonType] = useState("");
+  const [displayType, setDisplayType] = useState("");
+
+  const [persons1, setPersons1] = useState("");
+  const [persons2, setPersons2] = useState("");
+  const [width1, setWidth1] = useState("");
+  const [length1, setLength1] = useState("");
+  const [width2, setWidth2] = useState("");
+  const [length2, setLength2] = useState("");
+  const [count1, setCount1] = useState("");
+  const [count2, setCount2] = useState("");
+
+  const [paymentType, setPaymentType] = useState("");
+  const [rentalMonth, setRentalMonth] = useState("");
+  const [subThing, setSubThing] = useState("");
+  const [etc, setEtc] = useState("");
+  const [buyer, setBuyer] = useState("");
 
   const typeClass = "w-[80px] h-[400px]";
 
@@ -60,7 +76,7 @@ function App() {
           />
           <p className="text-xl">상 품 계 약 서</p>
         </div>
-        <div id="infoform">
+        <form id="infoform">
           <div className="flex mt-[40px] justify-between">
             <div>
               <label htmlFor="companyname">상호명 : </label>
@@ -109,62 +125,134 @@ function App() {
               <div className="text-center">
                 <img src={멀바우} alt="멀바우" className={typeClass} />
                 <p>멀바우</p>
-                <input type="checkbox" className="w-5 h-5" value="멀바우" onChange={(e) => setTopType(e.target.value)} checked={topType === "멀바우"}/>
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="멀바우"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "멀바우"}
+                />
               </div>
               <div className="text-center">
                 <img src={자작} alt="자작" className={typeClass} />
                 <p>자작</p>
-                <input type="checkbox" className="w-5 h-5" value="자작" onChange={(e) => setTopType(e.target.value)} checked={topType === "자작"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="자작"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "자작"}
+                />
               </div>
               <div className="text-center">
                 <img src={아카시아} alt="아카시아" className={typeClass} />
                 <p>아카시아</p>
-                <input type="checkbox" className="w-5 h-5" value="아카시아" onChange={(e) => setTopType(e.target.value)} checked={topType === "아카시아"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="아카시아"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "아카시아"}
+                />
               </div>
               <div className="text-center">
                 <img src={자연목} alt="자연목" className={typeClass} />
                 <p>자연목</p>
-                <input type="checkbox" className="w-5 h-5" value="자연목" onChange={(e) => setTopType(e.target.value)} checked={topType === "자연목"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="자연목"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "자연목"}
+                />
               </div>
               <div className="text-center">
                 <img src={티크} alt="티크" className={typeClass} />
                 <p>티크</p>
-                <input type="checkbox" className="w-5 h-5" value="티크" onChange={(e) => setTopType(e.target.value)} checked={topType === "티크"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="티크"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "티크"}
+                />
               </div>
               <div className="text-center">
                 <img src={진티크} alt="진티크" className={typeClass} />
                 <p>진티크</p>
-                <input type="checkbox" className="w-5 h-5" value="진티크" onChange={(e) => setTopType(e.target.value)} checked={topType === "진티크"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="진티크"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "진티크"}
+                />
               </div>
               <div className="text-center">
                 <img src={월넛} alt="월넛" className={typeClass} />
                 <p>월넛</p>
-                <input type="checkbox" className="w-5 h-5" value="월넛" onChange={(e) => setTopType(e.target.value)} checked={topType === "월넛"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="월넛"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "월넛"}
+                />
               </div>
               <div className="text-center">
                 <img src={블랙오크} alt="블랙오크" className={typeClass} />
                 <p>블랙오크</p>
-                <input type="checkbox" className="w-5 h-5" value="블랙오크" onChange={(e) => setTopType(e.target.value)} checked={topType === "블랙오크"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="블랙오크"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "블랙오크"}
+                />
               </div>
               <div className="text-center">
                 <img src={화이트반광} alt="화이트반광" className={typeClass} />
                 <p>화이트(반광)</p>
-                <input type="checkbox" className="w-5 h-5" value="화이트반광" onChange={(e) => setTopType(e.target.value)} checked={topType === "화이트반광"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="화이트반광"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "화이트반광"}
+                />
               </div>
               <div className="text-center">
                 <img src={골드블랙} alt="골드블랙" className={typeClass} />
                 <p>골드블랙</p>
-                <input type="checkbox" className="w-5 h-5" value="골드블랙" onChange={(e) => setTopType(e.target.value)} checked={topType === "골드블랙"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="골드블랙"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "골드블랙"}
+                />
               </div>
               <div className="text-center">
                 <img src={대리석무늬} alt="대리석무늬" className={typeClass} />
                 <p>대리석무늬</p>
-                <input type="checkbox" className="w-5 h-5" value="대리석무늬" onChange={(e) => setTopType(e.target.value)} checked={topType === "대리석무늬"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="대리석무늬"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "대리석무늬"}
+                />
               </div>
               <div className="text-center">
                 <img src={클래식} alt="클래식" className={typeClass} />
                 <p>클래식</p>
-                <input type="checkbox" className="w-5 h-5" value="클래식" onChange={(e) => setTopType(e.target.value)} checked={topType === "클래식"} />
+                <input
+                  type="checkbox"
+                  className="w-5 h-5"
+                  value="클래식"
+                  onChange={(e) => setTopType(e.target.value)}
+                  checked={topType === "클래식"}
+                />
               </div>
             </div>
           </div>
@@ -418,6 +506,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 ml-5"
                     value="spoonBox1"
+                    onChange={(e) => setSpoonType(e.target.value)}
+                    checked={spoonType === "spoonBox1"}
                   />
                 </div>
                 <div>
@@ -436,6 +526,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 ml-5"
                     value="spoonBox2"
+                    onChange={(e) => setSpoonType(e.target.value)}
+                    checked={spoonType === "spoonBox2"}
                   />
                 </div>
                 <div>
@@ -454,6 +546,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 ml-5"
                     value="spoonBox3"
+                    onChange={(e) => setSpoonType(e.target.value)}
+                    checked={spoonType === "spoonBox3"}
                   />
                 </div>
                 <div>
@@ -472,6 +566,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 ml-5"
                     value="spoonBox4"
+                    onChange={(e) => setSpoonType(e.target.value)}
+                    checked={spoonType === "spoonBox4"}
                   />
                 </div>
                 <div>
@@ -490,6 +586,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 ml-5"
                     value="spoonBox5"
+                    onChange={(e) => setSpoonType(e.target.value)}
+                    checked={spoonType === "spoonBox5"}
                   />
                 </div>
                 <div>
@@ -511,6 +609,8 @@ function App() {
                   type="checkbox"
                   className="w-5 h-5 mx-5"
                   value="basicDisplay"
+                  onChange={(e) => setDisplayType(e.target.value)}
+                  checked={displayType === "basicDisplay"}
                 />
                 <label htmlFor="basicDisplay">
                   강화유리( 320 * 70mm ), 살균 기능만 포함
@@ -530,6 +630,8 @@ function App() {
                     type="checkbox"
                     className="w-5 h-5 mx-5"
                     value="upgradeDisplay"
+                    onChange={(e) => setDisplayType(e.target.value)}
+                    checked={displayType === "upgradeDisplay"}
                   />
                   <label htmlFor="upgradeDisplay">
                     살균 + 광고 + 테이블오더 통합 디스플레이
@@ -552,21 +654,25 @@ function App() {
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[60px] h-[30px]"
+                  onChange={(e) => setPersons1(e.target.value)}
                 />
                 <p>인용 테이블</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setWidth1(e.target.value)}
                 />
                 <p>mm</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setLength1(e.target.value)}
                 />
                 <p>mm</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setCount1(e.target.value)}
                 />
                 <p>개</p>
               </div>
@@ -574,21 +680,25 @@ function App() {
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[60px] h-[30px]"
+                  onChange={(e) => setPersons2(e.target.value)}
                 />
                 <p>인용 테이블</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setWidth2(e.target.value)}
                 />
                 <p>mm</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setLength2(e.target.value)}
                 />
                 <p>mm</p>
                 <input
                   type="text"
                   className="border mx-4 border-black text-center rounded-md w-[40px] h-[30px]"
+                  onChange={(e) => setCount2(e.target.value)}
                 />
                 <p>개</p>
               </div>
@@ -598,9 +708,23 @@ function App() {
               <div className="flex align-middle mt-[40px]">
                 <p className="mr-5">일 시 불 ( 현 금 / 카 드 )</p>
                 <label htmlFor="cash">현금</label>
-                <input id="cash" type="checkbox" className="w-5 h-5 mx-5" />
+                <input
+                  id="cash"
+                  type="checkbox"
+                  className="w-5 h-5 mx-5"
+                  value="cash"
+                  onChange={(e) => setPaymentType(e.target.value)}
+                  checked={paymentType === "cash"}
+                />
                 <label htmlFor="card">카드</label>
-                <input id="card" type="checkbox" className="w-5 h-5 mx-5" />
+                <input
+                  id="card"
+                  type="checkbox"
+                  className="w-5 h-5 mx-5"
+                  value="card"
+                  onChange={(e) => setPaymentType(e.target.value)}
+                  checked={paymentType === "card"}
+                />
               </div>
               <div>
                 <label htmlFor="month">
@@ -610,6 +734,7 @@ function App() {
                   id="month"
                   type="text"
                   className="border border-black text-center rounded-md w-[60px] h-[30px] mx-5"
+                  onChange={(e) => setRentalMonth(e.target.value)}
                 />
               </div>
               <div>
@@ -620,6 +745,7 @@ function App() {
                   id="subthing"
                   type="text"
                   className="border border-black text-center rounded-md w-[400px] h-[30px] mx-5"
+                  onChange={(e) => setSubThing(e.target.value)}
                 />
               </div>
               <div className="flex align-middle">
@@ -628,6 +754,7 @@ function App() {
                   id="etc"
                   type="text"
                   className="border border-black text-center rounded-md w-[400px] h-[60px] mx-5"
+                  onChange={(e) => setEtc(e.target.value)}
                 />
               </div>
               <div>
@@ -636,14 +763,18 @@ function App() {
                   id="buyer"
                   type="text"
                   className="border border-black text-center rounded-md w-[400px] h-[30px] mx-5"
+                  onChange={(e) => setBuyer(e.target.value)}
                 />
               </div>
             </div>
-            <button className="mt-[60px] py-5 px-7 border border-black text-2xl rounded-xl" onClick={()=>console.log(companyNo)}>
+            <button
+              className="mt-[60px] py-5 px-7 border border-black text-2xl rounded-xl"
+              onClick={() => console.log(companyNo)}
+            >
               제출
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
