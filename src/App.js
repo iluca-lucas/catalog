@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 import "./App.css";
 import lucasname from "./assets/images/lucasnameblack.png";
@@ -65,6 +66,53 @@ function App() {
 
   const typeClass = "w-[80px] h-[400px]";
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      company_name: companyName,
+      company_no: companyNo,
+      company_type: companyType,
+      company_address: companyAddress,
+      leg_type: legType,
+      top_type: topType,
+      top_thickness: topThickness,
+      spoon_type: spoonType,
+      display_type: displayType,
+      persons1: persons1,
+      persons2: persons2,
+      width1: width1,
+      length1: length1,
+      width2: width2,
+      length2: length2,
+      count1: count1,
+      count2: count2,
+      payment_type: paymentType,
+      rental_month: rentalMonth,
+      sub_thing: subThing,
+      etc: etc,
+      buyer: buyer,
+    };
+
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID, // Replace with your EmailJS service ID
+        process.env.REACT_APP_TEMPLATE_ID, // Replace with your EmailJS template ID
+        templateParams,
+        process.env.REACT_APP_PUBLIC_KEY // Replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          alert("Email successfully sent!");
+        },
+        (error) => {
+          alert("Failed to send email. Please try again.");
+          console.log(error);
+        }
+      );
+  };
+  
+
   return (
     <div className="w-full pt-[40px] px-[60px] py-[100px]">
       <div id="page1">
@@ -76,13 +124,14 @@ function App() {
           />
           <p className="text-xl">상 품 계 약 서</p>
         </div>
-        <form id="infoform">
+        <form id="infoform" onSubmit={sendEmail}>
           <div className="flex mt-[40px] justify-between">
             <div>
               <label htmlFor="companyname">상호명 : </label>
               <input
                 id="companyname"
                 type="text"
+                name="companyname"
                 placeholder="상호명"
                 className="border ml-4 border-black text-center rounded-md h-[30px]"
                 onChange={(e) => setCompanyName(e.target.value)}
@@ -93,6 +142,7 @@ function App() {
               <input
                 id="companyno"
                 type="text"
+                name="companyno"
                 placeholder="연락처"
                 className="border ml-4 border-black text-center rounded-md h-[30px]"
                 onChange={(e) => setCompanyNo(e.target.value)}
@@ -103,6 +153,7 @@ function App() {
               <input
                 id="companytype"
                 type="text"
+                name="companytype"
                 placeholder="업종"
                 className="border ml-4 border-black text-center rounded-md h-[30px]"
                 onChange={(e) => setCompanyType(e.target.value)}
@@ -115,6 +166,7 @@ function App() {
               id="companyaddress"
               type="text"
               placeholder="주소"
+              name="companyaddress"
               className="border ml-4 border-black text-center rounded-md h-[30px] w-[80%]"
               onChange={(e) => setCompanyAddress(e.target.value)}
             />
@@ -127,6 +179,7 @@ function App() {
                 <p>멀바우</p>
                 <input
                   type="checkbox"
+                  name="멀바우"
                   className="w-5 h-5"
                   value="멀바우"
                   onChange={(e) => setTopType(e.target.value)}
@@ -712,18 +765,18 @@ function App() {
                   id="cash"
                   type="checkbox"
                   className="w-5 h-5 mx-5"
-                  value="cash"
+                  value="현금"
                   onChange={(e) => setPaymentType(e.target.value)}
-                  checked={paymentType === "cash"}
+                  checked={paymentType === "현금"}
                 />
                 <label htmlFor="card">카드</label>
                 <input
                   id="card"
                   type="checkbox"
                   className="w-5 h-5 mx-5"
-                  value="card"
+                  value="카드"
                   onChange={(e) => setPaymentType(e.target.value)}
-                  checked={paymentType === "card"}
+                  checked={paymentType === "카드"}
                 />
               </div>
               <div>
@@ -769,7 +822,7 @@ function App() {
             </div>
             <button
               className="mt-[60px] py-5 px-7 border border-black text-2xl rounded-xl"
-              onClick={() => console.log(companyNo)}
+              type="submit"
             >
               제출
             </button>
