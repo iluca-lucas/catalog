@@ -104,6 +104,7 @@ function App() {
       .then(
         (result) => {
           alert("Email successfully sent!");
+          window.location.reload();
         },
         (error) => {
           alert("Failed to send email. Please try again.");
@@ -661,9 +662,9 @@ function App() {
                   id="basicDisplay"
                   type="checkbox"
                   className="w-5 h-5 mx-5"
-                  value="basicDisplay"
+                  value="살균기능만"
                   onChange={(e) => setDisplayType(e.target.value)}
-                  checked={displayType === "basicDisplay"}
+                  checked={displayType === "살균기능만"}
                 />
                 <label htmlFor="basicDisplay">
                   강화유리( 320 * 70mm ), 살균 기능만 포함
@@ -682,9 +683,9 @@ function App() {
                     id="upgradeDisplay"
                     type="checkbox"
                     className="w-5 h-5 mx-5"
-                    value="upgradeDisplay"
+                    value="통합디스플레이"
                     onChange={(e) => setDisplayType(e.target.value)}
-                    checked={displayType === "upgradeDisplay"}
+                    checked={displayType === "통합디스플레이"}
                   />
                   <label htmlFor="upgradeDisplay">
                     살균 + 광고 + 테이블오더 통합 디스플레이
